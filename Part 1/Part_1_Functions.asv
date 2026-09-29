@@ -19,9 +19,9 @@ R = [1  0           0;
      0  sin(theta)  cos(theta)];
 end
 
-% rotY: Creates a Rotation matrix for rotations about the Y-axis
+% RotY: Creates a Rotation matrix for rotations about the Y-axis
 %
-% R = rotY(theta)
+% R = RotY(theta)
 % Calculates R, given theta. R represents a rotation about the Y-axis by
 % theta radians
 %
@@ -40,9 +40,9 @@ R = [cos(theta)     0   sin(theta);
      -sin(theta)    0   cos(theta)];
 end
 
-% rotZ: Creates a Rotation matrix for rotations about the Z-axis
+% RotZ: Creates a Rotation matrix for rotations about the Z-axis
 %
-% R = rotZ(theta)
+% R = RotZ(theta)
 % Calculates R, given theta. R represents a rotation about the Z-axis by
 % theta radians
 %
@@ -61,28 +61,8 @@ function R = rotZ(theta)
          0           0              1];
 end
 
-
-% rpy2Rot: Creates a Rotation matrix for rotations using pitch, roll, and
-% yaw angles
-%
-% R = rpy2Rot(roll, pitch, yaw)
-% Calculates R, given pitch, roll, and yaw. R represents a rotation about 
-% the X, Y, and Z axes by roll, pitch, and yaw, respectively.
-% Depends on rotX(), rotY(), and rotZ().
-%
-% R = A spatial rotation matrix (3x3) representing a rotation about the
-% Z-axis
-%
-% theta = Angle to rotate about the Z-axis (in radians)
-%
-% Jake Stanley
-% <Student number hidden until repository is made private>
-% MEGN 544
-% 9/29/2026
 function R = rpy2Rot(roll, pitch, yaw)
-    R = RotZ(yaw)*Roty(pitch)*RotX(roll);
-end
-
+    R = RotZ(yaw)*Roty(pitch)*RotX(roll)
 
 
 
